@@ -47,7 +47,6 @@ final size = MediaQuery.of(context).size;
     return ClipRRect (
       borderRadius: BorderRadius.circular(20),
       child: Image.network(
-        
         'https://yesno.wtf/assets/yes/14-b57c6dc03aa15a4b18f53eb50d6197ee.gif',
         width: size.width * 0.7,
         height: 150,

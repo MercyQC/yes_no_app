@@ -53,5 +53,3 @@ class _ChatView extends StatelessWidget {
     );
   }
 }
-
-

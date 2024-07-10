@@ -9,8 +9,6 @@ import 'package:yes_no_app/presentation/widgets/shared/message_field_box.dart';
 class ChatScreen extends StatelessWidget {
   const ChatScreen ({super.key}); 
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,17 +41,16 @@ final chatProvider = context.watch<ChatProvider>();
         child: Column(
           children: [
             Expanded(child: ListView.builder(
+              controller: chatProvider.chatScrollController,
               itemCount: chatProvider.messagesList.length,
               itemBuilder: (BuildContext context, int index) {
                 final message = chatProvider.messagesList[index];
 
                 return(message.fromWho == FromWho.hers)
                 ?const HerMessageBubble()
-                : MyMessageBubble(message : message );},),),        
+                : MyMessageBubble(message : message );},),),       
 
-
-
-                /// Caja de texto de mensajes
+               /// Caja de texto de mensajes
                  MessageFieldBox(onValue: (value) => chatProvider.sendMessage(value),), 
           ],
         ),

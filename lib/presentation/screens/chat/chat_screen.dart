@@ -54,7 +54,7 @@ final chatProvider = context.watch<ChatProvider>();
 
 
                 /// Caja de texto de mensajes
-                const MessageFieldBox(), 
+                 MessageFieldBox(onValue: (value) => chatProvider.sendMessage(value),), 
           ],
         ),
       ),

@@ -1,10 +1,5 @@
 
 import 'package:yes_no_app/domain/entities/message.dart';
-import 'dart:convert';
-
-YesNoModel yesNoModelFromJson(String str) => YesNoModel.fromJsonMap(json.decode(str));
-
-String yesNoModelToJson(YesNoModel data) => json.encode(data.toJson());
 
 class YesNoModel {
     final String answer;
@@ -35,7 +30,7 @@ class YesNoModel {
     Message toMessageEntity() => Message(
       text: answer == 'yes' ? 'yes' : 'no', 
       fromWho: FromWho.hers,
-      imgUrl: image
+      imageUrl: image
       ); 
 
 

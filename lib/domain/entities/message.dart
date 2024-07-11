@@ -12,7 +12,9 @@ Message ({
   required this.text,
   this.imgUrl,
   required this.fromWho  
-}); 
+});
+
+  get imageUrl => null; 
   
   
   

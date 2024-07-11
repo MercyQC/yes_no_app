@@ -7,7 +7,11 @@ import 'package:yes_no_app/presentation/widgets/chat/my_message_bubble.dart';
 import 'package:yes_no_app/presentation/widgets/shared/message_field_box.dart';
 
 class ChatScreen extends StatelessWidget {
-  const ChatScreen ({super.key}); 
+    final Message message; 
+      const ChatScreen ({
+        super.key, 
+        required this.message}); 
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +51,7 @@ final chatProvider = context.watch<ChatProvider>();
                 final message = chatProvider.messagesList[index];
 
                 return(message.fromWho == FromWho.hers)
-                ?const HerMessageBubble()
+                ? HerMessageBubble(message:message)
                 : MyMessageBubble(message : message );},),),       
 
                /// Caja de texto de mensajes

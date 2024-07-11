@@ -29,6 +29,9 @@ if(text.endsWith('?')){
 
 Future<void> herReply() async {
 final herMessage = await getYesNoAnswer.getAnswer(); 
+messagesList.add(herMessage);
+    notifyListeners();
+
 }
 
 
